@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA10FA61-7CFF-C93F-D141-4E9EBC218863" name="SEXO">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:59 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7619D172-1C99-6EDB-0D70-4F72F91C6EAC">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:22 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="67023ABD-F469-5D50-146F-5F44DEE21BB9">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:22 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8C38BFE7-87BE-308B-55E6-CDA4F1D10134" name="SEXO_PK">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:22 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7619D172-1C99-6EDB-0D70-4F72F91C6EAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

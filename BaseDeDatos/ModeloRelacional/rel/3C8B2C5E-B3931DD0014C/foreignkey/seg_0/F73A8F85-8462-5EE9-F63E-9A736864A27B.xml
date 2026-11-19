@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F73A8F85-8462-5EE9-F63E-9A736864A27B" containerWithKeyObject="B55920D6-B094-8456-C2EE-DF90D9D84AC2" localFKIndex="7399ECF2-8047-7241-7462-6080A3928346" name="MASCOTAS_SEXO_FK">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:49 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<referredTableLongName>SEXO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FA10FA61-7CFF-C93F-D141-4E9EBC218863</referredTableID>
+<keyObject>8C38BFE7-87BE-308B-55E6-CDA4F1D10134</keyObject>
+<referredKeyID>8C38BFE7-87BE-308B-55E6-CDA4F1D10134</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

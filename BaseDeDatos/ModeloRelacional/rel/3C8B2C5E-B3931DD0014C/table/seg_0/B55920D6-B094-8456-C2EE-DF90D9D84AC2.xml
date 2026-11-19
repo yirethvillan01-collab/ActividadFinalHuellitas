@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B55920D6-B094-8456-C2EE-DF90D9D84AC2" name="MASCOTAS">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:10:51 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NOMBRE" id="3BC2E060-E0F1-A3D1-9A89-A98340C8D8EB">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID" id="935262E2-CC75-5897-D1C8-3C0508A0FAB1">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EDAD" id="106B8F7D-FCBF-6863-76BF-93D156E1E17B">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RAZA" id="E7CF79EA-F38C-8147-26CB-9C8A96BAAF3C">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESPONSABLE" id="F1013428-8015-7FDB-AE07-AFA8740B5AD4">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OBSERVACIONES" id="6CAC2558-BEF2-918A-C7C8-E55BA135E759">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEXO_ID" id="AFCE9AA7-AE1C-175C-482A-8148439F7BFD">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:49 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F73A8F85-8462-5EE9-F63E-9A736864A27B" referredColumn="7619D172-1C99-6EDB-0D70-4F72F91C6EAC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EA0EA619-F511-B974-1FE4-FD1464F841C6" name="MASCOTAS_PK">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:27:13 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="935262E2-CC75-5897-D1C8-3C0508A0FAB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7399ECF2-8047-7241-7462-6080A3928346" name="MASCOTAS_SEXO_FK">
+<createdBy>apple</createdBy>
+<createdTime>2026-10-21 15:29:49 UTC</createdTime>
+<ownerDesignName>ModeloRelacional</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AFCE9AA7-AE1C-175C-482A-8148439F7BFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

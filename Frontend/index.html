@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huellitas · Veterinaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="5" cy="11" rx="2.2" ry="3"/><ellipse cx="9.5" cy="5.5" rx="2.2" ry="3"/><ellipse cx="14.5" cy="5.5" rx="2.2" ry="3"/><ellipse cx="19" cy="11" rx="2.2" ry="3"/><path d="M12 11c-3.5 0-6.5 3.2-6.5 6 0 2 1.6 3 3.4 3 1.2 0 2-.5 3.1-.5s1.9.5 3.1.5c1.8 0 3.4-1 3.4-3 0-2.8-3-6-6.5-6z"/></g></symbol></svg>
+  <header class="topbar">
+    <a class="brand" href="#listar" aria-label="Huellitas, ir al inicio">
+      <span class="brand-icon" aria-hidden="true">🐾</span> Huellitas
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <button data-view="listar" class="nav-btn"><svg class="paw" aria-hidden="true" viewBox="0 0 24 24"><use href="#paw"/></svg><span>Mascotas</span></button>
+      <button data-view="crear" class="nav-btn"><svg class="paw" aria-hidden="true" viewBox="0 0 24 24"><use href="#paw"/></svg><span>Registrar</span></button>
+      <button data-view="actualizar" class="nav-btn"><svg class="paw" aria-hidden="true" viewBox="0 0 24 24"><use href="#paw"/></svg><span>Editar</span></button>
+      <button data-view="eliminar" class="nav-btn"><svg class="paw" aria-hidden="true" viewBox="0 0 24 24"><use href="#paw"/></svg><span>Eliminar</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LISTAR -->
+    <section id="view-listar" class="view">
+      <h1>Mascotas registradas</h1>
+      <p class="lead">Filtra por ID, nombre de la mascota, responsable o especie. Puedes combinar varios filtros.</p>
+      <form id="form-filtros" class="panel filtros">
+        <div class="filtro"><label for="f-id">ID</label><input id="f-id" type="number" min="1" inputmode="numeric" placeholder="Ej: 12"></div>
+        <div class="filtro grow"><label for="f-nombre">Nombre de la mascota</label><input id="f-nombre" placeholder="Ej: Cacao" autocomplete="off"></div>
+        <div class="filtro grow"><label for="f-responsable">Responsable</label><input id="f-responsable" placeholder="Ej: Antonio" autocomplete="off"></div>
+        <div class="filtro"><label for="f-especie">Especie</label><select id="f-especie"></select></div>
+        <div class="filtro-acciones">
+          <button class="btn btn-primary" type="submit">Filtrar</button>
+          <button class="btn btn-ghost" type="reset">Limpiar</button>
+        </div>
+      </form>
+      <div class="resultados"><strong id="conteo" aria-live="polite"></strong><div id="chips" class="chips"></div></div>
+      <div id="lista" class="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- CREAR -->
+    <section id="view-crear" class="view" hidden>
+      <h1>Registrar mascota</h1>
+      <p class="lead">Completa los datos. Los campos con * son obligatorios.</p>
+      <form id="form-crear" class="panel form" novalidate>
+        <div class="fields"></div>
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Guardar mascota</button>
+          <button class="btn btn-ghost" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ACTUALIZAR -->
+    <section id="view-actualizar" class="view" hidden>
+      <h1>Editar mascota</h1>
+      <p class="lead">Busca la mascota por ID, cambia lo necesario y guarda.</p>
+      <form id="form-buscar-actualizar" class="search">
+        <label for="actualizar-id" class="sr-only">ID de la mascota</label>
+        <input id="actualizar-id" type="number" min="1" inputmode="numeric" placeholder="ID de la mascota" required>
+        <button class="btn btn-primary" type="submit">Cargar datos</button>
+      </form>
+      <form id="form-actualizar" class="panel form" novalidate hidden>
+        <p class="badge" id="actualizar-badge"></p>
+        <div class="fields"></div>
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Guardar cambios</button>
+          <button class="btn btn-ghost" type="button" id="cancelar-actualizar">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ELIMINAR -->
+    <section id="view-eliminar" class="view" hidden>
+      <h1>Eliminar mascota</h1>
+      <p class="lead">Busca la mascota por ID y revisa sus datos antes de eliminarla.</p>
+      <form id="form-buscar-eliminar" class="search">
+        <label for="eliminar-id" class="sr-only">ID de la mascota</label>
+        <input id="eliminar-id" type="number" min="1" inputmode="numeric" placeholder="ID de la mascota" required>
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </form>
+      <div id="eliminar-preview"></div>
+    </section>
+  </main>
+
+  <dialog id="confirmar" aria-labelledby="confirmar-titulo">
+    <form method="dialog">
+      <h2 id="confirmar-titulo">¿Eliminar esta mascota?</h2>
+      <p id="confirmar-texto"></p>
+      <div class="actions">
+        <button class="btn btn-ghost" value="cancel">Cancelar</button>
+        <button class="btn btn-danger" value="ok" id="confirmar-ok">Sí, eliminar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <!-- Campos compartidos por Crear y Actualizar -->
+  <template id="tpl-campos">
+    <div class="field"><label>Nombre *<input name="nombre" required maxlength="60" autocomplete="off"></label></div>
+    <div class="field"><label>Especie *<select name="especie" required></select></label></div>
+    <div class="field"><label>Raza *<input name="raza" required maxlength="60" autocomplete="off"></label></div>
+    <div class="field"><label>Edad (años) *<input name="edad" type="number" min="0" max="60" inputmode="numeric" required></label></div>
+    <div class="field"><label>Sexo *
+      <select name="sexo" required></select></label></div>
+    <div class="field"><label>Responsable *<input name="responsable" required maxlength="80" autocomplete="off"></label></div>
+    <div class="field full"><label>Observaciones<textarea name="observaciones" rows="3" maxlength="300" placeholder="Alergias, condiciones, cuidados especiales…"></textarea></label></div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
